@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'scheduler.dart';
 
 class HomeF412 extends StatelessWidget {
   String pathImage = "assets/img/yo.jpg";
@@ -72,99 +73,103 @@ class HomeF412 extends StatelessWidget {
         ),
       )
     );
-    final banner = InkWell(
-      child: Container(
-        height: 150.0,
-        width: width,
-        margin: EdgeInsets.only(
-            top: 30.0,
-            left: 20.0,
-            right: 20.0
-        ),
-        decoration: BoxDecoration(
-            color: Colors.blueAccent,
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            shape: BoxShape.rectangle,
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: Colors.black38,
-                  blurRadius: 15.0,
-                  offset: Offset(0.0, 7.0)
-              )
-            ]
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(
-                left: 20,
-                top: 35.0
-              ),
-              height: 150,
-              width: 200,
-              child: Column(
-                children: <Widget>[
-                  Expanded(child: Text(
-                    "Tú salúd mental es muy importante.",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                    ),
-                  )),
-                  Expanded(child: Text(
-                    "Sí tienes una emergencia psiquiatrica clicka aquí.",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white
-                    ),
-                  ))
-                ],
-              ),
-              alignment: Alignment.topLeft,
+    final banner = Material(
+      child: InkWell(
+        child: Container(
+            height: 150.0,
+            width: width,
+            margin: EdgeInsets.only(
+                top: 30.0,
+                left: 20.0,
+                right: 20.0
             ),
-            Container(
-              child: Expanded(child: Image(
-                  image: AssetImage("assets/img/bannerimagedef.png"))),
+            decoration: BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                shape: BoxShape.rectangle,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: Colors.black38,
+                      blurRadius: 15.0,
+                      offset: Offset(0.0, 7.0)
+                  )
+                ]
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(
+                      left: 20,
+                      top: 35.0
+                  ),
+                  height: 150,
+                  width: 200,
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(child: Text(
+                        "Tú salúd mental es muy importante.",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                        ),
+                      )),
+                      Expanded(child: Text(
+                        "Sí tienes una emergencia psiquiatrica clicka aquí.",
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white
+                        ),
+                      ))
+                    ],
+                  ),
+                  alignment: Alignment.topLeft,
+                ),
+                Container(
+                  child: Expanded(child: Image(
+                      image: AssetImage("assets/img/bannerimagedef.png"))),
 
-            ),
-          ],
-        )
+                ),
+              ],
+            )
+        ),
+        onTap: (){
+          print("Tapped on Container");
+        },
       ),
-      onTap: (){
-        print("Tapped on Container");
-      },
     );
 
     final pastillero = Column(
       children: <Widget>[
-        InkWell(
-          child: Container(
-              margin: EdgeInsets.only(
-                  top: 20
-              ),
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  shape: BoxShape.rectangle,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.black38,
-                        blurRadius: 15.0,
-                        offset: Offset(0.0, 7.0)
-                    )
-                  ]
-              ),
+        Material(
+          child: InkWell(
+            child: Container(
+                margin: EdgeInsets.only(
+                    top: 20
+                ),
+                height: 100.0,
+                width: 100.0,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    shape: BoxShape.rectangle,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 15.0,
+                          offset: Offset(0.0, 7.0)
+                      )
+                    ]
+                ),
 
-              child: Icon(Icons.watch_later, color: Colors.deepOrangeAccent, size: 30.0)
+                child: Icon(Icons.watch_later, color: Colors.deepOrangeAccent, size: 30.0)
+            ),
+            onTap: (){
+              print("Pastillero");
+            },
           ),
-          onTap: (){
-            print("Pastillero");
-          },
         ),
         Container(
           margin: EdgeInsets.only(
@@ -182,38 +187,42 @@ class HomeF412 extends StatelessWidget {
 
     final diario = Column(
       children: <Widget>[
-        InkWell(
-          child: Container(
-              margin: EdgeInsets.only(
-                  top: 20
-              ),
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  shape: BoxShape.rectangle,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.black38,
-                        blurRadius: 15.0,
-                        offset: Offset(0.0, 7.0)
-                    )
-                  ]
-              ),
+        Material(
+          child: InkWell(
+            child: Container(
+                margin: EdgeInsets.only(
+                    top: 20
+                ),
+                height: 100.0,
+                width: 100.0,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    shape: BoxShape.rectangle,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 15.0,
+                          offset: Offset(0.0, 7.0)
+                      )
+                    ]
+                ),
 
-              child: Icon(Icons.import_contacts, color: Colors.deepOrangeAccent, size: 30.0)
+                child: Icon(Icons.import_contacts, color: Colors.deepOrangeAccent, size: 30.0)
+            ),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Scheduler();
+              }));
+            },
           ),
-          onTap: (){
-            print("Diario");
-          },
         ),
         Container(
           margin: EdgeInsets.only(
               top: 10
           ),
           child: Text(
-            "Diario",
+            "Scheduler",
             style: TextStyle(
                 fontWeight: FontWeight.normal
             ),
@@ -223,31 +232,33 @@ class HomeF412 extends StatelessWidget {
     );
     final trastornos = Column(
       children: <Widget>[
-        InkWell(
-          child: Container(
-              margin: EdgeInsets.only(
-                  top: 20
-              ),
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  shape: BoxShape.rectangle,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.black38,
-                        blurRadius: 15.0,
-                        offset: Offset(0.0, 7.0)
-                    )
-                  ]
-              ),
+        Material(
+          child: InkWell(
+            child: Container(
+                margin: EdgeInsets.only(
+                    top: 20
+                ),
+                height: 100.0,
+                width: 100.0,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    shape: BoxShape.rectangle,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 15.0,
+                          offset: Offset(0.0, 7.0)
+                      )
+                    ]
+                ),
 
-              child: Icon(Icons.library_books, color: Colors.deepOrangeAccent, size: 30.0)
+                child: Icon(Icons.library_books, color: Colors.deepOrangeAccent, size: 30.0)
+            ),
+            onTap: (){
+              print("Trastornos");
+            },
           ),
-          onTap: (){
-            print("Trastornos");
-          },
         ),
         Container(
           margin: EdgeInsets.only(
@@ -265,29 +276,31 @@ class HomeF412 extends StatelessWidget {
 
     final farmacos = Column(
       children: <Widget>[
-        InkWell(
-          child: Container(
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  shape: BoxShape.rectangle,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.black38,
-                        blurRadius: 15.0,
-                        offset: Offset(0.0, 7.0)
-                    )
-                  ]
-              ),
+       Material(
+         child:  InkWell(
+           child: Container(
+               height: 100.0,
+               width: 100.0,
+               decoration: BoxDecoration(
+                   color: Colors.white,
+                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                   shape: BoxShape.rectangle,
+                   boxShadow: <BoxShadow>[
+                     BoxShadow(
+                         color: Colors.black38,
+                         blurRadius: 15.0,
+                         offset: Offset(0.0, 7.0)
+                     )
+                   ]
+               ),
 
-              child: Icon(Icons.blur_on, color: Colors.deepOrangeAccent, size: 30.0)
-          ),
-          onTap: (){
-            print("Farmacos");
-          },
-        ),
+               child: Icon(Icons.blur_on, color: Colors.deepOrangeAccent, size: 30.0)
+           ),
+           onTap: (){
+             print("Farmacos");
+           },
+         ),
+       ),
         Container(
           margin: EdgeInsets.only(
               top: 10
@@ -305,28 +318,30 @@ class HomeF412 extends StatelessWidget {
 
     final clinicas = Column(
       children: <Widget>[
-        InkWell(
-          child: Container(
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  shape: BoxShape.rectangle,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.black38,
-                        blurRadius: 15.0,
-                        offset: Offset(0.0, 7.0)
-                    )
-                  ]
-              ),
+        Material(
+          child: InkWell(
+            child: Container(
+                height: 100.0,
+                width: 100.0,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    shape: BoxShape.rectangle,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 15.0,
+                          offset: Offset(0.0, 7.0)
+                      )
+                    ]
+                ),
 
-              child: Icon(Icons.local_hospital, color: Colors.deepOrangeAccent, size: 30.0)
+                child: Icon(Icons.local_hospital, color: Colors.deepOrangeAccent, size: 30.0)
+            ),
+            onTap: (){
+              print("Clinicas");
+            },
           ),
-          onTap: (){
-            print("Clinicas");
-          },
         ),
         Container(
           margin: EdgeInsets.only(
@@ -344,28 +359,30 @@ class HomeF412 extends StatelessWidget {
 
     final doctores = Column(
       children: <Widget>[
-        InkWell(
-          child: Container(
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  shape: BoxShape.rectangle,
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.black38,
-                        blurRadius: 15.0,
-                        offset: Offset(0.0, 7.0)
-                    )
-                  ]
-              ),
+        Material(
+          child: InkWell(
+            child: Container(
+                height: 100.0,
+                width: 100.0,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    shape: BoxShape.rectangle,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 15.0,
+                          offset: Offset(0.0, 7.0)
+                      )
+                    ]
+                ),
 
-              child: Icon(Icons.person_pin, color: Colors.deepOrangeAccent, size: 30.0)
+                child: Icon(Icons.person_pin, color: Colors.deepOrangeAccent, size: 30.0)
+            ),
+            onTap: (){
+              print("Doctores");
+            },
           ),
-          onTap: (){
-            print("Doctores");
-          },
         ),
         Container(
           margin: EdgeInsets.only(
